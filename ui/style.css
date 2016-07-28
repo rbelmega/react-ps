@@ -1,0 +1,503 @@
+/* blog */
+p {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+.fa-list-alt {
+	position: absolute;
+	left: 0;
+	top: 13px;
+	font-size: 18px;
+	color: #757575;
+}
+
+.post {
+	margin-left: 26px;
+	display: block;
+	color: #5a5a5a;
+	text-decoration: none;
+	font-family: myriad-md;
+	font-size: 18px;
+	transition: all 0.2s ease;
+}
+
+.post:hover {
+	color: #000000;
+	transition: all 0.2s ease;
+}
+
+.date {
+
+	color: #6d6d6d;
+	font-size: 13px;
+	margin: 0 5px;
+	margin-left: 26px;
+
+}
+
+.dev-name {
+	text-align: right;
+	margin: 15px 5%;
+}
+
+.blog-wrapper {
+	margin: 10px 5% 0 5%;
+	background: #ffffff;
+	box-shadow: 0px -1px 4px #ccc;
+}
+
+header {
+	text-align: center;
+	font-family: myriad;
+	padding: 12px;
+	font-size: 35px;
+}
+
+.blog-wrapper article {
+	padding: 15px;
+}
+
+.post-date {
+	color: #9e9e9e;
+	text-align: right;
+	margin: 5px;
+	position: relative;
+	top: 10px;
+	padding: 0 12px;
+}
+
+.fake-post {
+	height: 30px;
+	margin: 10px 7% -16px 7%;
+	background: #ffffff;
+	box-shadow: 0px 0px 4px #ccc;
+}
+
+
+/* body */
+.header {
+	margin: 0 -15px;
+	padding: 5px 10px;
+	background: #028dcb;
+	color: white;
+	font-size: 18px;
+	line-height: 30px
+}
+
+.wrapper {
+	display: flex;
+}
+
+.blog, .twitter {
+	flex: 1;
+}
+
+.bio {
+	flex: 2;
+}
+
+.bio .header {
+	padding: 5px 12px;
+	margin: 0 -16px;
+}
+
+.blog, .twitter, .bio {
+	transition: all 0.4s;
+	padding: 0 15px;
+	border-right: 1px solid #e8e8e8;
+}
+
+
+.blog:hover, .twitter:hover, .bio:hover {
+	background: #fbfbfb;
+	transition: all 0.6s;
+}
+
+.twitter-timeline {
+	display: none;
+}
+
+@media (max-width: 700px) {
+	.wrapper .col-3:first-child {
+		padding-right: 15px;
+	}
+}
+
+.header .fa {
+	float: right;
+	margin-top: 6px;
+	color: #026896;
+}
+
+h3 {
+	display: inline-block;
+	width: 50%;
+}
+
+h3 .fa {
+	margin-right: 8px;
+}
+
+@media screen and (max-width: 600px) {
+	.wrapper {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.bio {
+		order: -2;
+	}
+
+	.blog {
+		order: -1;
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes heartbeat {
+	0% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	14% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	28% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	42% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	70% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@-moz-keyframes heartbeat {
+	0% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	14% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	28% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	42% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	70% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@-o-keyframes heartbeat {
+	0% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	14% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	28% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	42% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	70% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes heartbeat {
+	0% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	14% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	28% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	42% {
+		-moz-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+	70% {
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+/* :not(:required) hides this rule from IE9 and below */
+.heartbeat:not(:required) {
+	-webkit-animation: heartbeat 1300ms ease 0s infinite normal;
+	-khtml-animation: heartbeat 1300ms ease 0s infinite normal;
+	-moz-animation: heartbeat 1300ms ease 0s infinite normal;
+	-ms-animation: heartbeat 1300ms ease 0s infinite normal;
+	-o-animation: heartbeat 1300ms ease 0s infinite normal;
+	animation: heartbeat 1300ms ease 0s infinite normal;
+}
+
+/* contact */
+.contact-text {
+	font-family: myriad-md;
+	transform: rotate(-90deg);
+	float: left;
+	margin: 32px -19px 0 0;
+	padding: 10px;
+	transition: color 0.5s ease;
+}
+.contact-list {
+	list-style-type: none;
+	padding: 0;
+	float: left;
+}
+
+.contact-list li {
+	margin: 6px 0;
+}
+.contact-list li a {
+	padding: 5px 10px 5px 5px;
+	transition: all 0.5s ease;
+
+}
+.contact-list:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+a {
+	text-decoration: none;
+	color: #545453;
+}
+.contact-list li a:hover {
+	padding-left: 15px;
+	transition: padding-left 0.3s ease-out;
+}
+
+
+/* header */
+.profile-info {
+	flex: 1;
+	text-align: right;
+	font-size: 20px;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.profile-image-wrapper {
+	flex: 2;
+}
+
+.profile-image {
+	width: 158px;
+	height: 158px;
+	border-radius: 158px;
+	border: 3px solid #ebebeb;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background: url("ui/resources/img/me.jpg");
+	background-size: cover;
+}
+
+/* Gray Scale */
+.profile-image {
+	-webkit-filter: grayscale(40%);
+	filter: grayscale(40%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.profile-image:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.fa {
+	color: #7D7D7D;
+	padding-right: 4px;
+}
+
+h3 {
+	font-family: myriad-md;
+	margin: 0 0 4px 0;
+}
+
+p {
+	margin: 4px 0;
+	color: #7D7D7D;
+}
+
+.wrapper {
+	display: flex;
+	margin: 0 5%;
+	align-items: center;
+}
+
+contacts-component {
+	flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+	.wrapper {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.profile-image-wrapper {
+		order: -2;
+	}
+
+	.profile-info {
+		text-align: center;
+		order: -1;
+	}
+
+	contacts-component {
+		display: none;
+	}
+}
+
+.test {
+	pointer-events: none;
+	width: 152px;
+	height: 152px;
+	border-radius: 158px;
+	overflow: hidden;
+	position: absolute;
+	right: calc(50% - 76px);
+	z-index: 9;
+	top: 3px;
+}
+
+.test > div {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	position: relative;
+	left: 100%;
+
+	transition: left 2s;
+}
+
+.test > div span {
+	font-size: 60px;
+	color: white;
+	position: relative;
+	top: 44px;
+	left: 21px;
+	opacity: 0;
+}
+
+.test > div.enter span {
+	opacity: 1;
+	-webkit-transition: all 0.1s ease-out 0.1s;
+	transition: all 0.1s ease-out 0.1s;
+}
+.test > div.enter {
+	left: 50%;
+	-webkit-transition: all 0.1s ease-out 0.1s;
+	transition: all 0.1s ease-out 0.1s;
+}
+
+/* app */
+@font-face {
+	font-family: myriad;
+	src: url(/ui/resources/fonts/myriad-set-pro_thin.ttf);
+}
+
+@font-face {
+	font-family: myriad-md;
+	src: url(/ui/resources/fonts/myriad-set-pro_medium.ttf);
+}
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	background: #f2f2f2;
+	font-family: myriad;
+}
+.wrapper:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+.blog-wrapper table {
+	border-collapse: collapse;
+}
+.blog-wrapper td, .blog-wrapper th {
+	border: 1px solid #c3c3c3;
+	padding: 6px 25px;
+}
+.blog-wrapper th {
+	background: #d5d5d5;
+}
+.blog-wrapper ul {
+	margin-top: 0;
+}
+.blog-wrapper table tr:nth-child(even) {
+	background: #f8f8f8;
+}
