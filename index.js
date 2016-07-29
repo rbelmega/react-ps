@@ -1,3 +1,6 @@
-require('babel-register');
+var express = require('express');
+var app = express();
 
-require('./index-babel');
+app.use('/', express.static('public'));
+
+app.listen(process.env.PORT || 5000);
