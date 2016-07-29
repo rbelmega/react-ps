@@ -1,5 +1,4 @@
 import React from "react";
-import {withRouter} from "react-router";
 import {connect} from "react-redux";
 import Twitter from "../twitter/Twitter";
 import Bio from "../bio/Bio";
@@ -34,7 +33,7 @@ class Body extends React.Component {
 }
 
 
-const MapStateToProps = (state, {params}) => {
+const MapStateToProps = (state) => {
 	return {
 		bio: state.bioData.bio,
 		activities: state.bioData.activities,
@@ -42,9 +41,9 @@ const MapStateToProps = (state, {params}) => {
 	};
 };
 
-Body = withRouter(connect(
+Body = connect(
 	MapStateToProps,
 	actions
-)(Body));
+)(Body);
 
 export default Body;

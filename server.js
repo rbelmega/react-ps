@@ -1,10 +1,13 @@
+import qs from 'qs' // Add this at the top of the file
 import path from 'path'
 import Express from 'express'
 import React from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
 import dataStore from './ui/reducers'
-import Root from './ui/Root'
+import {App} from './ui/App'
+import {renderToString} from 'react-dom/server';
+import * as api from "./ui/api";
 
 const app = Express();
 const port = 3000;
@@ -13,7 +16,53 @@ const port = 3000;
 app.use(handleRender);
 
 // We are going to fill these out in the sections to follow
-function handleRender(req, res) { /* ... */ }
-function renderFullPage(html, initialState) { /* ... */ }
+function handleRender(req, res) {
+	api.fetchBio().then(bioData =>
+		api.fetchPosts().then(postsData => {
+			// Read the counter from the request, if provided
+			// const params = qs.parse(req.query)
 
+			// Compile an initial state
+			let initialState = {bioData, postsData};
+			// Create a new Redux store instance
+			const store = createStore(dataStore, initialState);
+
+			// Render the component to a string
+			const html = renderToString(
+				<Provider store={store}>
+					<App />
+				</Provider>
+			);
+
+			// Grab the initial state from our Redux store
+			const finalState = store.getState();
+
+			// Send the rendered page back to the client
+			res.send(renderFullPage(html, finalState))
+		})
+	)
+}
+
+function renderFullPage(html, initialState) {
+	return `
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rostyslav Belmeha</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://www.belmeha.com/style.css">
+	<script src="http://www.belmeha.com/index.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css"/>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+</head>
+<body>
+<div id="app">${html}</div>
+        <script>
+          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
+        </script>
+<script src="index.js"></script>
+</body>
+</html>
+`
+}
 app.listen(port);
