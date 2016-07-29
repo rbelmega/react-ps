@@ -10,7 +10,6 @@
     "precopy": "copyfiles -f ui/data/**/* public/data/posts",
     "postcopy": "copyfiles -f ui/resources/img/**/* public/resources/img",
     "copy": "copyfiles -f ui/resources/fonts/**/* public/resources/fonts",
-    "prestart": "npm run build",
     "start": "node index.js",
     "start-server": "webpack-dev-server",
     "clean": "rimraf public/*.*",
