@@ -357,7 +357,7 @@ a {
 	overflow: hidden;
 	margin: 0 auto;
 	margin-bottom: 10px;
-	background: url("/resources/img/me.jpg");
+	background: url("ui/resources/img/me.jpg");
 	background-size: cover;
 }
 
@@ -464,12 +464,12 @@ contacts-component {
 /* app */
 @font-face {
 	font-family: myriad;
-	src: url(/resources/fonts/myriad-set-pro_thin.ttf);
+	src: url(/ui/resources/fonts/myriad-set-pro_thin.ttf);
 }
 
 @font-face {
 	font-family: myriad-md;
-	src: url(/resources/fonts/myriad-set-pro_medium.ttf);
+	src: url(/ui/resources/fonts/myriad-set-pro_medium.ttf);
 }
 
 * {

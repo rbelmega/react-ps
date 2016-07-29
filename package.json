@@ -7,11 +7,16 @@
     "node": "5.9.1"
   },
   "scripts": {
+    "precopy": "copyfiles -f ui/data/**/* public/data/posts",
+    "postcopy": "copyfiles -f ui/resources/img/**/* public/resources/img",
+    "copy": "copyfiles -f ui/resources/fonts/**/* public/resources/fonts",
+    "prestart": "npm run build",
     "start": "node index.js",
     "start-server": "webpack-dev-server",
     "clean": "rimraf public/*.*",
     "prebuild": "npm run clean",
-    "build": "webpack --config ./ui/webpack.prod.config --progress --profile --colors --display-error-details --display-cached"
+    "build": "webpack --config ./ui/webpack.prod.config --progress --profile --colors --display-error-details --display-cached",
+    "postbuild": "npm run copy"
   },
   "dependencies": {
     "express": "^4.14.0",
