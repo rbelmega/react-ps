@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node index.js",
+    "start-server": "webpack-dev-server",
     "clean": "rimraf public/*.*",
     "prebuild": "npm run clean",
     "build": "webpack --config ./ui/webpack.prod.config --progress --profile --colors --display-error-details --display-cached"
