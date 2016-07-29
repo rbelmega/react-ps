@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require("path");
+var alive = require("./heroku-alive");
 
 app.use('/', express.static('public'));
 
