@@ -9,6 +9,7 @@ import {App} from './ui/App'
 import {renderToString} from 'react-dom/server';
 import * as api from "./ui/api";
 
+var alive = require("./heroku-alive");
 const app = Express();
 const port = 3000;
 
