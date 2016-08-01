@@ -13,7 +13,8 @@ const app = Express();
 const port = 3000;
 
 // This is fired every time the server side receives a request
-app.use(handleRender);
+app.use('/', Express.static('public'));
+app.get('/*', handleRender);
 
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
@@ -45,13 +46,14 @@ function handleRender(req, res) {
 
 function renderFullPage(html, initialState) {
 	return `
+<!DOCTYPE html>
 <html lang="en">
+<base href="/"/>
 <head>
 	<meta charset="UTF-8">
 	<title>Rostyslav Belmeha</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="http://www.belmeha.com/style.css">
-	<script src="http://www.belmeha.com/index.js"></script>
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css"/>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 </head>
@@ -61,6 +63,16 @@ function renderFullPage(html, initialState) {
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
         </script>
 <script src="index.js"></script>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-74194667-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
 </body>
 </html>
 `
