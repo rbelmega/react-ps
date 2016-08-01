@@ -78,4 +78,4 @@ function renderFullPage(html, initialState) {
 </html>
 `
 }
-app.listen(port);
+app.listen(process.env.PORT || port);
