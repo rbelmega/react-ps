@@ -15,6 +15,7 @@ var alive = require("./heroku-alive");
 const app = Express();
 const port = 3000;
 
+require('newrelic');
 
 // app.use('/', Express.static('public'));
 app.get('/*.*',  Express.static('public'));
