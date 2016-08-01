@@ -10,15 +10,17 @@ import {App} from './ui/App'
 // import {Router, Route, browserHistory} from "react-router";
 import {renderToString} from 'react-dom/server';
 import * as api from "./ui/api";
-
-var alive = require("./heroku-alive");
+import  StartKeepAlive from "./heroku-alive";
 const app = Express();
 const port = 3000;
 
 require('newrelic');
 
+const alive = new StartKeepAlive();
+alive.run();
+
 // app.use('/', Express.static('public'));
-app.get('/*.*',  Express.static('public'));
+app.get('/*.*', Express.static('public'));
 app.get('/*', handleRender);
 
 // This is fired every time the server side receives a request
@@ -27,29 +29,29 @@ app.get('/*', handleRender);
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
 	api.fetchBio().then(bioData =>
-		api.fetchPosts().then(postsData => {
-			// Read the counter from the request, if provided
-			// const params = qs.parse(req.query)
+			api.fetchPosts().then(postsData => {
+				// Read the counter from the request, if provided
+				// const params = qs.parse(req.query)
 
-			// Compile an initial state
-			let initialState = {bioData, postsData};
-			// Create a new Redux store instance
-			const store = createStore(dataStore, initialState);
+				// Compile an initial state
+				let initialState = {bioData, postsData};
+				// Create a new Redux store instance
+				const store = createStore(dataStore, initialState);
 
-			// Render the component to a string
-			const html = renderToString(
-				<Provider store={store}>
-					<App />
-				</Provider>
-			);
+				// Render the component to a string
+				const html = renderToString(
+					<Provider store={store}>
+						<App />
+					</Provider>
+				);
 
 //						<Route path="/blog/(:id)" component={Blog}/>
-			// Grab the initial state from our Redux store
-			const finalState = store.getState();
+				// Grab the initial state from our Redux store
+				const finalState = store.getState();
 
-			// Send the rendered page back to the client
-			res.send(renderFullPage(html, finalState))
-		})
+				// Send the rendered page back to the client
+				res.send(renderFullPage(html, finalState))
+			})
 	)
 }
 
