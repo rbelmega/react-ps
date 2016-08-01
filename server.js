@@ -6,6 +6,8 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import dataStore from './ui/reducers'
 import {App} from './ui/App'
+// import {Blog} from './ui/components/blog/Blog'
+// import {Router, Route, browserHistory} from "react-router";
 import {renderToString} from 'react-dom/server';
 import * as api from "./ui/api";
 
@@ -13,9 +15,13 @@ var alive = require("./heroku-alive");
 const app = Express();
 const port = 3000;
 
-// This is fired every time the server side receives a request
-app.use('/', Express.static('public'));
+
+// app.use('/', Express.static('public'));
+app.get('/*.*',  Express.static('public'));
 app.get('/*', handleRender);
+
+// This is fired every time the server side receives a request
+// app.use('/', handleRender);
 
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
@@ -36,6 +42,7 @@ function handleRender(req, res) {
 				</Provider>
 			);
 
+//						<Route path="/blog/(:id)" component={Blog}/>
 			// Grab the initial state from our Redux store
 			const finalState = store.getState();
 
