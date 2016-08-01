@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "5.9.1"
+    "node": "6.2.0"
   },
   "scripts": {
     "precopy": "copyfiles -f ui/data/**/* public/data/posts",
     "postcopy": "copyfiles -f ui/resources/img/**/* public/resources/img",
     "copy": "copyfiles -f ui/resources/fonts/**/* public/resources/fonts",
-    "start": "./node_modules/.bin/babel-node  server.js",
+    "start": "babel-node  --presets es2015 ./server.js",
     "start-server": "webpack-dev-server",
     "clean": "rimraf public/*.*",
     "prebuild": "npm run clean",
