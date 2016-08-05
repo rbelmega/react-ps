@@ -7,21 +7,20 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import dataStore from './ui/reducers'
 import {App} from './ui/App'
-// import {Blog} from './ui/components/blog/Blog'
-// import {Router, Route, browserHistory} from "react-router";
+import {match, RouterContext} from 'react-router'
+import routes from './ui/routes'
 import {renderToString} from 'react-dom/server';
 import * as api from "./ui/api";
 import  StartKeepAlive from "./heroku-alive";
 const app = Express();
 const port = 3000;
 
-
 const alive = new StartKeepAlive();
 alive.run();
 
 // app.use('/', Express.static('public'));
 app.get('/*.*', Express.static('public'));
-app.get('/*', handleRender);
+app.get('*', handleRender);
 
 // This is fired every time the server side receives a request
 // app.use('/', handleRender);
@@ -29,29 +28,38 @@ app.get('/*', handleRender);
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
 	api.fetchBio().then(bioData =>
-			api.fetchPosts().then(postsData => {
-				// Read the counter from the request, if provided
-				// const params = qs.parse(req.query)
+		api.fetchPosts().then(postsData => {
+			// Read the counter from the request, if provided
+			// const params = qs.parse(req.query)
 
-				// Compile an initial state
-				let initialState = {bioData, postsData};
-				// Create a new Redux store instance
-				const store = createStore(dataStore, initialState);
+			// Compile an initial state
+			let initialState = {bioData, postsData};
+			// Create a new Redux store instance
+			const store = createStore(dataStore, initialState);
+
+			// Grab the initial state from our Redux store
+			const finalState = store.getState();
+
+			// Send the rendered page back to the client
+
+			match({routes: routes, location: req.url}, (err, redirect, props) => {
+				// `RouterContext` is the what `Router` renders. `Router` keeps these
+				// `props` in its state as it listens to `browserHistory`. But on the
+				// server our app is stateless, so we need to use `match` to
+				// get these props before rendering.
 
 				// Render the component to a string
-				const html = renderToString(
+				const appHtml = renderToString(
 					<Provider store={store}>
-						<App />
-					</Provider>
-				);
+						<RouterContext {...props}/>
+					</Provider>);
 
-//						<Route path="/blog/(:id)" component={Blog}/>
-				// Grab the initial state from our Redux store
-				const finalState = store.getState();
-
-				// Send the rendered page back to the client
-				res.send(renderFullPage(html, finalState))
+				// dump the HTML into a template, lots of ways to do this, but none are
+				// really influenced by React Router, so we're just using a little
+				// function, `renderPage`
+				res.send(renderFullPage(appHtml, finalState))
 			})
+		})
 	)
 }
 
