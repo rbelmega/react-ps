@@ -6,7 +6,6 @@ import React from 'react'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import dataStore from './ui/reducers'
-import {App} from './ui/App'
 import {match, RouterContext} from 'react-router'
 import routes from './ui/routes'
 import {renderToString} from 'react-dom/server';
