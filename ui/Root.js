@@ -1,15 +1,11 @@
 import React from "react";
 import {Provider} from "react-redux";
-import {App} from "./App";
-import Blog from "./components/blog/Blog";
-import {Router, Route, browserHistory} from "react-router";
+import {Router, browserHistory} from "react-router";
+import routes from "./routes";
 
 const Root = ({store}) => (
 	<Provider store={store}>
-		<Router history={browserHistory}>
-			<Route path="/" component={App}/>
-			<Route path="/blog/(:id)" component={Blog}/>
-		</Router>
+		<Router history={browserHistory} routes={routes} />
 	</Provider>
 );
 

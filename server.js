@@ -1,5 +1,6 @@
 // import qs from 'qs' // Add this at the top of the file
 // import path from 'path'
+require('newrelic');
 import Express from 'express'
 import React from 'react'
 import {createStore} from 'redux'
@@ -14,7 +15,6 @@ import  StartKeepAlive from "./heroku-alive";
 const app = Express();
 const port = 3000;
 
-require('newrelic');
 
 const alive = new StartKeepAlive();
 alive.run();

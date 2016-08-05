@@ -1,5 +1,9 @@
 import React from "react";
-var hljs = window.hljs;
+var hljs;
+
+if (typeof window !== "undefined") {
+	hljs = window.hljs;
+}
 
 class CodeBlock extends React.Component {
 	componentDidMount() {
@@ -11,7 +15,10 @@ class CodeBlock extends React.Component {
 	};
 
 	highlightCode() {
-		hljs.highlightBlock(this.refs.code);
+		if (typeof hljs !== "undefined") {
+			hljs.highlightBlock(this.refs.code);
+		}
+
 	};
 
 	render() {
