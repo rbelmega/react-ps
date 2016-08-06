@@ -4,7 +4,7 @@ import React from "react"
 class Twitter extends React.Component {
 	constructor() {
 		super();
-		this.classLoaded = "";
+		this.classLoaded = window.twttr ? "loaded" : "";
 	}
 
 	getScript() {
