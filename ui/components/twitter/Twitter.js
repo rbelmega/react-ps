@@ -8,40 +8,40 @@ class Twitter extends React.Component {
 	}
 
 	getScript() {
-		var d = document;
-		var s = "script";
-		var id = "twitter-wjs";
-		var js;
-		var fjs = d.getElementById("tweets");
-		if (!d.getElementById(id)) {
+		let self = this;
+		window.twttr = (function (d, s, id) {
+			var js, fjs = d.getElementById("tweets"),
+				t = window.twttr || {};
+			if (d.getElementById(id)) {
+				return;
+			}
 			js = d.createElement(s);
 			js.id = id;
-			js.src = "http://platform.twitter.com/widgets.js";
+			js.src = "https://platform.twitter.com/widgets.js";
 			fjs.parentNode.insertBefore(js, fjs);
-			js.onload = () => {
-				this.loaded();
+
+			t._e = [];
+			t.ready = function (f) {
+				t._e.push(f);
 			};
-		}
+
+			return t;
+		}(document, "script", "twitter-wjs"));
+
+		// / Wait for the asynchronous resources to load
+		twttr.ready(function (twttr) {
+			twttr.events.bind(
+				'rendered',
+				function (event) {
+					self.loaded();
+				}
+			);
+		});
 	}
 
 	componentDidMount() {
 		this.getScript();
 	}
-
-
-// <div className={this.classLoaded}>
-// <Timeline
-// widgetId={'694262144762822658'}
-// options={{
-// 	username: 'izzz0',
-// 	chrome: "nofooter noheader noborder noscrollbar transparent",
-// 	theme: "dark",
-// 	linkColor: "#000"
-// }}
-// onLoad={() => this.loaded()}
-// />
-// </div>
-// </div>
 
 	loaded() {
 		this.classLoaded = "loaded";

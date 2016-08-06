@@ -39,7 +39,6 @@
     "react-markdown-loader": "^0.1.5",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.0-alpha.2",
-    "react-twitter-widgets": "^0.2.4",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
