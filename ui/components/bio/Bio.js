@@ -5,14 +5,17 @@ class Bio extends React.Component {
 	render() {
 		return (
 			<div className="bio">
-				<h2 className="header">
-					<i className="fa fa-reddit-alien"></i>
-					<span>about me</span>
-				</h2>
 				<section>
 					<article style={{
 						margin: "10px 0"
 					}}>
+						<h3 style={{
+							fontSize: 30,
+							fontWeight: "lighter",
+							marginBottom: 20
+						}}
+						>About</h3>
+
 						{this.props.activities && this.props.activities.map((activity, index) => (
 							<h3 key={index}>
 								<i className={activity.iconClass}></i>
@@ -21,7 +24,9 @@ class Bio extends React.Component {
 
 						))}
 					</article>
-					<p>
+					<p style={{
+						margin: "50px 0"
+					}}>
 						{this.props.bio}
 					</p>
 				</section>

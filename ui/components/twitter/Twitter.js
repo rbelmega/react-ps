@@ -22,11 +22,11 @@ class Twitter extends React.Component {
 	render() {
 		return (
 			<div className="twitter">
-				<h2 className="header"><i className="fa fa-twitter"></i>
-					twitter</h2>
 				<a className="twitter-timeline"
 					data-chrome="nofooter noheader noborder noscrollbar transparent"
 					href="https://twitter.com/izzz0"
+					data-theme="dark"
+					data-link-color="#000"
 					data-widget-id="694262144762822658">Tweets by @izzz0</a>
 				<div id="tweets"></div>
 			</div>

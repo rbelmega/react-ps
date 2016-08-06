@@ -6,10 +6,6 @@ class BlogList extends React.Component {
 
 		return (
 			<div className="blog">
-				<h2 className="header">
-					<i className="fa fa-pencil"></i>
-					blog
-				</h2>
 				{this.props.posts && this.props.posts.map(post => {
 					return (
 						<p key={post.file}>

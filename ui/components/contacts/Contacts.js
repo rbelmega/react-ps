@@ -27,7 +27,7 @@ class Contacts extends React.Component {
 			{
 				name: "GitHub",
 				link: "https://github.com/rbelmega",
-				color: "#2A2B2D",
+				color: "#fff",
 				letter: "g"
 			}
 		];
