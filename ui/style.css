@@ -93,8 +93,17 @@ header {
 }
 .twitter {
 	background: #00a3cd;
+	height:500px;
 }
+.twitter > div {
+	 opacity: 0;
+	transition: all 1s;
+ }
 
+.twitter > div.loaded {
+	opacity: 1;
+	transition: all 1s;
+}
 .blog, .twitter {
 	flex: 1;
 }
