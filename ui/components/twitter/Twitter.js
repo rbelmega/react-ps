@@ -4,7 +4,11 @@ import React from "react"
 class Twitter extends React.Component {
 	constructor() {
 		super();
-		this.classLoaded = window.twttr ? "loaded" : "";
+
+		if (typeof window !== "undefined") {
+			this.classLoaded = window.twttr ? "loaded" : "";
+		}
+
 	}
 
 	getScript() {
