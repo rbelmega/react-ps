@@ -25,7 +25,7 @@ class Bio extends React.Component {
 						))}
 					</article>
 					<p style={{
-						margin: "50px 0"
+						margin: "50px 0  0"
 					}}>
 						{this.props.bio}
 					</p>

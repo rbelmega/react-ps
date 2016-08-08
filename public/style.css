@@ -584,3 +584,17 @@ body {
 		  transform: scale3D(0, 0, 1);
 	  }
 }
+
+::-webkit-scrollbar {
+	width: 7px;
+	height: 7px;
+}
+
+::-webkit-scrollbar-track {
+	background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #898989;
+}
+

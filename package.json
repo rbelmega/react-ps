@@ -27,6 +27,7 @@
     "body-parser": "^1.0.2",
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.1.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.14.0",
     "newrelic": "^1.28.3",
@@ -42,7 +43,10 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "rx-dom": "^7.0.3",
+    "rxjs": "^5.0.0-beta.10",
+    "rxjs-es": "^5.0.0-beta.10"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^0.3.1",
