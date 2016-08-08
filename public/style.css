@@ -49,7 +49,7 @@ p {
 header {
 	text-align: center;
 	font-family: myriad;
-	padding: 12px;
+	padding: 12px 0;
 	font-size: 35px;
 	color: #b5b5b5;
 }
@@ -356,6 +356,7 @@ a {
 .profile-info h3 {
 	font-size: 50px;
 	font-family: myriad;
+	font-weight: lighter;
 }
 
 .profile-info p {
