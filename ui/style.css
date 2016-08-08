@@ -388,6 +388,17 @@ a {
 	filter: grayscale(80%);
 }
 
+.instagram-wrapper img {
+	-webkit-filter: grayscale(30%);
+	filter: grayscale(30%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.instagram-wrapper img:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
 .fa {
 	color: #7D7D7D;
 	padding-right: 4px;

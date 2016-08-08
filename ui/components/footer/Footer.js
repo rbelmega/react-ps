@@ -36,7 +36,8 @@ class Footer extends React.Component {
 		return (
 			<div style={{
 			}}>
-				<div style={{
+				<div className="instagram-wrapper"
+					style={{
 					whiteSpace: "nowrap",
 					overflowY: "auto"
 				}}>
