@@ -41,7 +41,10 @@ class Footer extends React.Component {
 					whiteSpace: "nowrap",
 					overflowY: "auto"
 				}}>
-					{this.data && this.data.map(img => <img src={img.images.thumbnail.url}/>)}
+					{this.data && this.data.map(img =>
+						<a href={img.link} target="_blank">
+							<img src={img.images.thumbnail.url}/>
+						</a>)}
 				</div>
 				<div style={{
 					padding: 30

@@ -4,7 +4,10 @@ import Body from "./components/body/Body"
 
 
 export const App = () => (
-	<div>
+	<div style={{
+		maxWidth: 1500,
+		margin: "auto"
+	}}>
 		<Header />
 		<Body />
 	</div>

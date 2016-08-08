@@ -153,6 +153,9 @@ h3 .fa {
 		flex-direction: column;
 	}
 
+	.me {
+		order: -3;
+	}
 	.bio {
 		order: -2;
 	}
@@ -369,10 +372,8 @@ a {
 .profile-image {
 	width: 90%;
 	height: 255px;
-	/* border-radius: 158px; */
-	/* border: 3px solid #ebebeb; */
 	overflow: hidden;
-	margin: 20px auto;
+	margin: auto;
 	background: url("/resources/img/me.jpg");
 	background-size: cover;
 }
@@ -391,14 +392,15 @@ a {
 }
 
 .instagram-wrapper img {
-	-webkit-filter: grayscale(30%);
-	filter: grayscale(30%);
+	-webkit-filter: grayscale(30%)  brightness(90%);
+	filter: grayscale(30%) brightness(90%);
+
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
 .instagram-wrapper img:hover {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
+	-webkit-filter: grayscale(0) brightness(120%);
+	filter: grayscale(0) brightness(120%);
 }
 
 .fa {
