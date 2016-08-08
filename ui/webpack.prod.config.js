@@ -33,7 +33,6 @@ module.exports = {
 				'NODE_ENV': JSON.stringify('production')
 			}
 		}),
-		new CopyWebpackPlugin([{from: './ui/index.html', to: './index.html'}]),
 		new CopyWebpackPlugin([{from: './ui/style.css', to: './style.css'}])
 	],
 };
