@@ -36,7 +36,7 @@ const Html = ({ state, component }) => {
 		{/*<script src={assets.javascript.vendor} charSet="UTF-8" />*/}
 		<div id="app" dangerouslySetInnerHTML={domApp}></div>
 		<script dangerouslySetInnerHTML={domState} charSet="UTF-8" />
-		<script src="http://www.belmeha.com/index.js" charSet="UTF-8" />
+		<script async src="http://www.belmeha.com/index.js" charSet="UTF-8" />
 		</body>
 		</html>
 	);
