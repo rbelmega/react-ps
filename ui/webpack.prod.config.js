@@ -1,6 +1,7 @@
 path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin    = require('copy-webpack-plugin');
+var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
 	devtool: 'eval',
@@ -33,6 +34,13 @@ module.exports = {
 				'NODE_ENV': JSON.stringify('production')
 			}
 		}),
-		new CopyWebpackPlugin([{from: './ui/style.css', to: './style.css'}])
+		new CopyWebpackPlugin([{from: './ui/style.css', to: './style.css'}]),
+		new CompressionPlugin({
+			asset: "[path].gz[query]",
+			algorithm: "gzip",
+			test: /\.js$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})
 	],
 };
