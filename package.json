@@ -30,6 +30,7 @@
     "jquery": "^3.1.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.14.0",
+    "markdown-react-js": "^0.3.0",
     "newrelic": "^1.28.3",
     "node-uuid": "^1.4.7",
     "normalizr": "^2.2.1",
