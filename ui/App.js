@@ -9,8 +9,9 @@ export const App = () => (
 		margin: "auto"
 	}}>
 		<Helmet
+			title=""
 			titleTemplate="Rostyslav Belmeha %s"
-			title="" />
+		/>
 		<Header />
 		<Body />
 	</div>
