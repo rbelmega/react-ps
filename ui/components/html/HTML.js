@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import Helmet from 'react-helmet';
 
@@ -12,8 +11,7 @@ import Helmet from 'react-helmet';
  * HTML doctype declaration, which is added to the rendered output
  * by the server.js file.
  */
-const Html = ({ assets, component, state, html }) => {
-	// const content = component ? ReactDOM.renderToString(component) : '';
+const Html = ({ state, html }) => {
 	const head = Helmet.rewind();
 	const domApp = { __html: html };
 	const domState = { __html: `window.__data=${serialize(state)};` };
@@ -46,7 +44,7 @@ const Html = ({ assets, component, state, html }) => {
 		</html>
 	);
 };
-
+//
 // Html.propTypes = {
 // 	assets: PropTypes.object,
 // 	component: PropTypes.node,
