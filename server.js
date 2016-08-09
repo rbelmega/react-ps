@@ -2,7 +2,6 @@
 // import path from 'path'
 require('newrelic');
 import Express from 'express'
-import connect from 'connect'
 import React from 'react'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -14,12 +13,15 @@ import * as api from "./ui/api";
 import  StartKeepAlive from "./heroku-alive";
 import Html from './ui/components/html/HTML';
 
+var compression = require('compression');
+
+
 const app = Express();
 const port = 3000;
 
 const alive = new StartKeepAlive();
 alive.run();
-app.use(connect.compress());
+app.use(compression());
 app.get('/*.*', Express.static('public'));
 app.get('*', handleRender);
 
