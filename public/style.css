@@ -612,7 +612,3 @@ body {
 ::-webkit-scrollbar-thumb {
 	background: #898989;
 }
-
-.timeline-ShowMoreButton {
-	background: red !important;
-}

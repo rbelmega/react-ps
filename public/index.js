@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("\"use strict\";\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(29);\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _Root = __webpack_require__(161);\n\nvar _Root2 = _interopRequireDefault(_Root);\n\nvar _configureStore = __webpack_require__(304);\n\nvar _configureStore2 = _interopRequireDefault(_configureStore);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _configureStore2.default)();\n\n_reactDom2.default.render(_react2.default.createElement(_Root2.default, { store: store }), document.getElementById(\"app\"));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./ui/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./ui/main.js?");
+	eval("\"use strict\";\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(29);\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _Root = __webpack_require__(161);\n\nvar _Root2 = _interopRequireDefault(_Root);\n\nvar _configureStore = __webpack_require__(304);\n\nvar _configureStore2 = _interopRequireDefault(_configureStore);\n\n__webpack_require__(308);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _configureStore2.default)();\n\n_reactDom2.default.render(_react2.default.createElement(_Root2.default, { store: store }), document.getElementById(\"app\"));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./ui/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./ui/main.js?");
 
 /***/ },
 /* 1 */
@@ -1887,6 +1887,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _redux = __webpack_require__(169);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar bioData = function bioData() {\n\tvar state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];\n\tvar action = arguments[1];\n\n\tswitch (action.type) {\n\t\tcase \"FETCH_DATA_REQUEST\":\n\t\t\treturn state;\n\t\tcase \"FETCH_BIO_SUCCESS\":\n\t\t\treturn action.response;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};\n\nvar postsData = function postsData() {\n\tvar state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];\n\tvar action = arguments[1];\n\n\tswitch (action.type) {\n\t\tcase \"FETCH_DATA_REQUEST\":\n\t\t\treturn state;\n\t\tcase \"FETCH_POSTS_SUCCESS\":\n\t\t\treturn action.response;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};\n\nvar blogData = function blogData() {\n\tvar state = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];\n\tvar action = arguments[1];\n\n\tswitch (action.type) {\n\t\tcase \"FETCH_DATA_REQUEST\":\n\t\t\treturn state;\n\t\tcase \"FETCH_BLOG_POST_SUCCESS\":\n\t\t\treturn action.response;\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};\n\nvar dataStore = (0, _redux.combineReducers)({\n\tbioData: bioData,\n\tpostsData: postsData,\n\tblogData: blogData\n});\n\nexports.default = dataStore;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./ui/reducers/index.js\n ** module id = 307\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./ui/reducers/index.js?");
+
+/***/ },
+/* 308 */
+/***/ function(module, exports) {
+
+	eval("'use strict';\n\n(function (i, s, o, g, r, a, m) {\n\t\ti['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {\n\t\t\t\t(i[r].q = i[r].q || []).push(arguments);\n\t\t}, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);\n})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');\n\nga('create', 'UA-74194667-1', 'auto');\nga('send', 'pageview');\n\n/*****************\n ** WEBPACK FOOTER\n ** ./ui/analytics.js\n ** module id = 308\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./ui/analytics.js?");
 
 /***/ }
 /******/ ]);
