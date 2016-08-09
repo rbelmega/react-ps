@@ -16,7 +16,7 @@ const Html = ({ state, component }) => {
 	const head = Helmet.rewind();
 	const content = component ? ReactDOM.renderToString(component) : '';
 	const domApp = { __html: content };
-	const domState = { __html: `window.__data=${serialize(state)};` };
+	const domState = { __html: `window.__INITIAL_STATE__=${serialize(state)};` };
 
 	return (
 		<html lang="en-us">
@@ -26,7 +26,7 @@ const Html = ({ state, component }) => {
 			{head.meta.toComponent()}
 			{head.link.toComponent()}
 			{head.script.toComponent()}
-			<link rel="shortcut icon" href="/favicon.ico" />
+			<link rel="shortcut icon" href="./favicon.ico" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<link rel="stylesheet" href="http://localhost:3000/style.css" />
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
@@ -37,11 +37,9 @@ const Html = ({ state, component }) => {
 		{/*<div id="app" dangerouslySetInnerHTML={domApp} />*/}
 		{/*<script dangerouslySetInnerHTML={domState} charSet="UTF-8" />*/}
 		{/*<script src={assets.javascript.vendor} charSet="UTF-8" />*/}
-		<script src="http://localhost:3000/index.js" charSet="UTF-8" />
 		<div id="app" dangerouslySetInnerHTML={domApp}></div>
 		<script dangerouslySetInnerHTML={domState} charSet="UTF-8" />
-		{/*<script src="index.js"></script>*/}
-
+		<script src="http://localhost:3000/index.js" charSet="UTF-8" />
 		</body>
 		</html>
 	);
