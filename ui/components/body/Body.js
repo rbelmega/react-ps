@@ -30,7 +30,7 @@ class Body extends React.Component {
 					<Twitter />
 					<Bio bio={this.props.bio} activities={this.props.activities}/>
 
-					<div className="me" style={{padding: 20}}>
+					<div className="me" style={{padding: 20, flex: 1}}>
 						<section className="profile-image-wrapper">
 							<div className="profile-image"></div>
 						</section>
