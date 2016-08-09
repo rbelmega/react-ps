@@ -2,6 +2,7 @@
 // import path from 'path'
 require('newrelic');
 import Express from 'express'
+import connect from 'connect'
 import React from 'react'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
@@ -18,7 +19,7 @@ const port = 3000;
 
 const alive = new StartKeepAlive();
 alive.run();
-
+app.use(connect.compress());
 app.get('/*.*', Express.static('public'));
 app.get('*', handleRender);
 
