@@ -1,5 +1,4 @@
 import React from 'react';
-import serialize from 'serialize-javascript';
 import Helmet from 'react-helmet';
 import ReactDOM from 'react-dom/server';
 
@@ -16,7 +15,7 @@ const Html = ({ state, component }) => {
 	const head = Helmet.rewind();
 	const content = component ? ReactDOM.renderToString(component) : '';
 	const domApp = { __html: content };
-	const domState = { __html: `window.__INITIAL_STATE__=${serialize(state)};` };
+	const domState = { __html: `window.__INITIAL_STATE__=${JSON.stringify(state)};` };
 
 	return (
 		<html lang="en-us">
