@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const CopyWebpackPlugin    = require('copy-webpack-plugin');
 var CompressionPlugin = require("compression-webpack-plugin");
 
+
 module.exports = {
-	devtool: 'eval',
 	entry: './ui/main.js',
 	output: {
 		path: "./public",
@@ -35,6 +35,10 @@ module.exports = {
 			}
 		}),
 		new CopyWebpackPlugin([{from: './ui/style.css', to: './style.css'}]),
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: false,
+			mangle: false
+		}),
 		new CompressionPlugin({
 			asset: "[path].gz[query]",
 			algorithm: "gzip",
