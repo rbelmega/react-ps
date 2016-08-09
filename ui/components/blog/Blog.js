@@ -3,8 +3,6 @@ import {Link} from "react-router";
 import {withRouter} from "react-router";
 import {connect} from "react-redux";
 import * as actions from "../../actions/index";
-// import ReactMarkdown from 'react-markdown';
-// import CodeBlock from "./CodeBlock"
 import Helmet from 'react-helmet';
 import MDReactComponent from 'markdown-react-js';
 
