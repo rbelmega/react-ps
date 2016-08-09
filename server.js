@@ -45,7 +45,7 @@ function handleRender(req, res) {
 				// server our app is stateless, so we need to use `match` to
 				// get these props before rendering.
 				// Render the component to a string
-				const appHtml = renderToString(
+				const appHtml = (
 					<Provider store={store}>
 						<RouterContext {...props}/>
 					</Provider>);
@@ -59,12 +59,14 @@ function handleRender(req, res) {
 }
 
 function render(state, html) {
-	return ReactDOM.renderToString(
+	const htmlBody = ReactDOM.renderToString(
 		<Html
 			state={state}
-			html={html}
+			component={html}
 		/>
-	)
+	);
+
+	return `<!doctype html>\n${htmlBody}`;
 }
 
 app.listen(process.env.PORT || port);
