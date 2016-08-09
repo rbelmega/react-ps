@@ -8,6 +8,13 @@ if (typeof window !== "undefined") {
 class CodeBlock extends React.Component {
 	componentDidMount() {
 		this.highlightCode();
+
+		var interval = setInterval(function() {
+			if (typeof window !== "undefined") {
+				window.hljs.highlightBlock(document.querySelector(".javascript"));
+				clearInterval(interval);
+			}
+		}, 100);
 	};
 
 	componentDidUpdate() {
@@ -33,11 +40,3 @@ class CodeBlock extends React.Component {
 }
 
 export default CodeBlock;
-
-var interval = setInterval(function() {
-	if (typeof window !== "undefined") {
-		window.hljs.highlightBlock(document.querySelector(".javascript"));
-		clearInterval(interval);
-		console.log("done");
-	}
-}, 100);
