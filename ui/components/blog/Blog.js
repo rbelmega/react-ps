@@ -23,7 +23,7 @@ class Blog extends React.Component {
 	render() {
 		return (
 			<section>
-				<Helmet title="Rostyslav Belmeha" />
+				<Helmet title="Rostyslav Belmeha | Blog" />
 				<Link to="/">
 					<h2 className="dev-name"><span className="post">Rostyslav Belmeha</span></h2>
 				</Link>
