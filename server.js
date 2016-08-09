@@ -11,7 +11,7 @@ import routes from './ui/routes'
 import ReactDOM, {renderToString} from 'react-dom/server';
 import * as api from "./ui/api";
 import  StartKeepAlive from "./heroku-alive";
-import Html from './ui/components/html/Html';
+import Html from './ui/components/html/HTML';
 
 const app = Express();
 const port = 3000;
