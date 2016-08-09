@@ -8,7 +8,9 @@ export const App = () => (
 		maxWidth: 1500,
 		margin: "auto"
 	}}>
-		<Helmet title="Rostyslav Belmeha" />
+		<Helmet
+			titleTemplate="Rostyslav Belmeha %s"
+			title="" />
 		<Header />
 		<Body />
 	</div>
