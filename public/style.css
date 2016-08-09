@@ -118,7 +118,7 @@ header {
 	margin: 0 -16px;
 }
 
-.blog, .twitter, .bio {
+.blog, .bio {
 	color: #ffffff;
 	padding: 0 15px;
 
@@ -613,3 +613,6 @@ body {
 	background: #898989;
 }
 
+.timeline-ShowMoreButton {
+	background: red !important;
+}

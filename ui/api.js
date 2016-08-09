@@ -41,12 +41,12 @@ const delay = (ms) =>
 	new Promise(resolve => setTimeout(resolve, ms));
 
 export const fetchBio = () =>
-	delay(5).then(() => {
+	delay(0).then(() => {
 		return myBio;
 	});
 
 export const fetchPosts = () =>
-	delay(5).then(() => {
+	delay(0).then(() => {
 		return posts;
 	});
 

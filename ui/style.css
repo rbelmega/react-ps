@@ -118,7 +118,7 @@ header {
 	margin: 0 -16px;
 }
 
-.blog, .twitter, .bio {
+.blog, .bio {
 	color: #ffffff;
 	padding: 0 15px;
 
@@ -612,4 +612,3 @@ body {
 ::-webkit-scrollbar-thumb {
 	background: #898989;
 }
-

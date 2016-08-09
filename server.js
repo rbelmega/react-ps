@@ -17,12 +17,9 @@ const port = 3000;
 const alive = new StartKeepAlive();
 alive.run();
 
-// app.use('/', Express.static('public'));
 app.get('/*.*', Express.static('public'));
 app.get('*', handleRender);
 
-// This is fired every time the server side receives a request
-// app.use('/', handleRender);
 
 // We are going to fill these out in the sections to follow
 function handleRender(req, res) {
@@ -46,7 +43,6 @@ function handleRender(req, res) {
 				// `props` in its state as it listens to `browserHistory`. But on the
 				// server our app is stateless, so we need to use `match` to
 				// get these props before rendering.
-
 				// Render the component to a string
 				const appHtml = renderToString(
 					<Provider store={store}>
@@ -69,11 +65,12 @@ function renderFullPage(html, initialState) {
 <base href="/"/>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Rostyslav Belmeha</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css"/>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+	<script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 </head>
 <body>
 <div id="app">${html}</div>
