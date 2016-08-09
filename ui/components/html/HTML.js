@@ -33,8 +33,6 @@ const Html = ({ state, component }) => {
 			<script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js" charSet="UTF-8" />
 		</head>
 		<body>
-		{/*<div id="app" dangerouslySetInnerHTML={domApp} />*/}
-		{/*<script dangerouslySetInnerHTML={domState} charSet="UTF-8" />*/}
 		{/*<script src={assets.javascript.vendor} charSet="UTF-8" />*/}
 		<div id="app" dangerouslySetInnerHTML={domApp}></div>
 		<script dangerouslySetInnerHTML={domState} charSet="UTF-8" />
