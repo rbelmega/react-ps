@@ -24,7 +24,7 @@ class CodeBlock extends React.Component {
 	render() {
 		return (
 			<pre>
-              <code className={this.props.language} ref="code">
+              <code className="javascript" ref="code">
                 {this.props.literal}
               </code>
             </pre>
@@ -33,3 +33,11 @@ class CodeBlock extends React.Component {
 }
 
 export default CodeBlock;
+
+var interval = setInterval(function() {
+	if (typeof window !== "undefined") {
+		window.hljs.highlightBlock(document.querySelector(".javascript"));
+		clearInterval(interval);
+		console.log("done");
+	}
+}, 100);
