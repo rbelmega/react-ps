@@ -17,7 +17,11 @@ const port = 3000;
 const alive = new StartKeepAlive();
 alive.run();
 
-// app.use('/', Express.static('public'));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.get('/*.*', Express.static('public'));
 app.get('*', handleRender);
 
