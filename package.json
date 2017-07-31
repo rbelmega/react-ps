@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "6.2.0"
+    "node": "8.2.1"
   },
   "scripts": {
     "precopy": "copyfiles -f ui/data/**/* public/data/posts",
